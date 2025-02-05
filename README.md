@@ -5,7 +5,7 @@ Bu proje, Node.js ve MongoDB kullanarak oluşturulmuş bir contact yönetim API'
 ## Bağlantılar
 
 - GitHub Repository: [https://github.com/gulayduzgun/nodejs-hw-mongodb](https://github.com/gulayduzgun/nodejs-hw-mongodb)
-- Live API: [Render.com URL'niz buraya gelecek]
+- Live API: [https://nodejs-hw-mongodb-1hs7.onrender.com](https://nodejs-hw-mongodb-1hs7.onrender.com)
 
 ## Endpoints
 
