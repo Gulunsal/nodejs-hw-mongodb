@@ -11,12 +11,22 @@ const initMongoConnection = async () => {
 
     const connectionString = `mongodb+srv://${MONGODB_USER}:${MONGODB_PASSWORD}@${MONGODB_URL}/${MONGODB_DB}?retryWrites=true&w=majority`;
     
-    await mongoose.connect(connectionString);
+    // Bağlantı hatası detaylarını görmek için
+    pino.info('Trying to connect with:', {
+      url: MONGODB_URL,
+      db: MONGODB_DB,
+      user: MONGODB_USER
+    });
+
+    await mongoose.connect(connectionString, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
     
     pino.info('Mongo connection successfully established!');
   } catch (error) {
-    pino.error('MongoDB connection error:', error);
-    throw error; // Hatayı yukarı fırlat
+    pino.error('MongoDB connection error:', error.message);
+    throw error;
   }
 };
 
